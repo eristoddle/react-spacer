@@ -19,11 +19,7 @@ export const Spacer = (props) => {
     flexShrink: props.shrink
   }
   
-  return (
-    <div style=style>
-      {props.children}
-    </div>
-  )
+  return <div style=style>{props.children}</div>
 }
 
 // module.exports = function Spacer (props) {
