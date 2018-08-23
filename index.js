@@ -1,39 +1,14 @@
-import React, { PureComponent } from 'react'
+'use strict';
 
-export class Spacer extends PureComponent { 
-  render() {
-    const style = {
-      width: (typeof props.width === 'number' ? `${props.width}px` : (props.width || '1px')),
-      height: (typeof props.height === 'number' ? `${props.height}px` : (props.height || '1px')),
-      flexGrow: props.grow,
-      flexShrink: props.shrink
-    }
-    return (
-      <div style=style>
-        {props.children}
-      </div>
-    )
-  }
-}
+var React = require('react');
 
-export const Spacer = (props) => {
-  const style = {
-    width: (typeof props.width === 'number' ? `${props.width}px` : (props.width || '1px')),
-    height: (typeof props.height === 'number' ? `${props.height}px` : (props.height || '1px')),
+module.exports = function Spacer(props) {
+  var style = {
+    width: typeof props.width === 'number' ? props.width + 'px' : props.width || '1px',
+    height: typeof props.height === 'number' ? props.height + 'px' : props.height || '1px',
     flexGrow: props.grow,
     flexShrink: props.shrink
-  }
-  
-  return <div style=style>{props.children}</div>
-}
+  };
 
-// module.exports = function Spacer (props) {
-//   const style = {
-//     width: (typeof props.width === 'number' ? `${props.width}px` : (props.width || '1px')),
-//     height: (typeof props.height === 'number' ? `${props.height}px` : (props.height || '1px')),
-//     flexGrow: props.grow,
-//     flexShrink: props.shrink
-//   }
-
-//   return React.createElement('div', { style }, props.children)
-// }
+  return React.createElement('div', { style: style }, props.children);
+};
