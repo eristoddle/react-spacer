@@ -1,12 +1,38 @@
-const React = require('react')
+// import React, { Component } from 'react'
 
-module.exports = function Spacer (props) {
+// export class Spacer extends Component {
+  
+//   render() {
+//     return (
+//       <div>
+      
+//       </div>
+//     )
+//   }
+// }
+
+export const Spacer = (props) => {
   const style = {
     width: (typeof props.width === 'number' ? `${props.width}px` : (props.width || '1px')),
     height: (typeof props.height === 'number' ? `${props.height}px` : (props.height || '1px')),
     flexGrow: props.grow,
     flexShrink: props.shrink
   }
-
-  return React.createElement('div', { style }, props.children)
+  
+  return (
+    <div style=style>
+      {props.children}
+    </div>
+  )
 }
+
+// module.exports = function Spacer (props) {
+//   const style = {
+//     width: (typeof props.width === 'number' ? `${props.width}px` : (props.width || '1px')),
+//     height: (typeof props.height === 'number' ? `${props.height}px` : (props.height || '1px')),
+//     flexGrow: props.grow,
+//     flexShrink: props.shrink
+//   }
+
+//   return React.createElement('div', { style }, props.children)
+// }
